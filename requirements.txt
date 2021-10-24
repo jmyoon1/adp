@@ -1,0 +1,3 @@
+pytorch==1.8.0
+torchvisiion==0.9.0
+foolbox==3.3.1

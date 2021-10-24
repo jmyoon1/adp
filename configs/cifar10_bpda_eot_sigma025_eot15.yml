@@ -1,0 +1,40 @@
+structure:
+  att_log: "cifar10" # Attacker model path
+  ebm_log: "cifar10" # EBM path
+  clf_log: "cifar10" # Classifier model path
+  classifier: "Wide_ResNet" # Classifier structure
+  dataset: "CIFAR10" # Dataset
+  bsize: 100 # Batch size
+  start_epoch: 0
+
+attack:
+  attack_method: "bpda_strong" # Attack method: list [clf_pgd, bpda_strong, spsa]
+  ptb: 8. # perturbation, pixel scale
+  alpha: 2. # One-step attack pixel scale
+  ball_dim: -1 # -1 if l_inf
+  n_eot: 15 # Number of EOT, 1 if no EOT applied
+  attack_lambda: 0.05 # adaptive attack step size strategy
+  attack_steps: 10 # Number of attack steps
+  iter: 40 # Number of iterations for gradient-based attacks
+
+certified:
+  ptb: 0.25 # Gaussian random perturbation to input
+  sample: 100 # Number of samples to be tested
+
+purification:
+  purify_method: "adp" # purification method in [adp, adp_decision]
+  rand_smoothing: true # Randomized smoothing right after input
+  rand_smoothing_level: 0.25 # stdev of Gaussian noise for randomized smoothing
+  rand_smoothing_ensemble: 10 # Ensembles of randomized smoothing
+  purification_lambda: 0.05 # level of purification per step
+  stopping_alpha: 0.001 # Stop purification if given alpha is lower than this.
+  max_iter: 10 # Default maximum number of iterations
+  purify_natural: true # true if we also purify natural images, false if not
+
+classification:
+  classify_all_steps: true # Save all logits if true, Only last logit if false
+
+device:
+  ebm_device: "cuda:0"
+  clf_device: "cuda:0"
+
