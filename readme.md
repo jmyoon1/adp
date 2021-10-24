@@ -3,10 +3,13 @@
 
 This repository includes the official PyTorch implementation of our paper:
 
-Adversarial Purification with Score-based Generative Models
-*Jongmin Yoon, Sung Ju Hwang, Juho Lee*
-the 38th International Conference for Machine Learning (ICML 2021)
-ArXiv: https://arxiv.org/abs/2106.06041
+> Adversarial Purification with Score-based Generative Models
+> 
+> *Jongmin Yoon, Sung Ju Hwang, Juho Lee*
+> 
+> the 38th International Conference for Machine Learning (ICML 2021)
+> 
+> ArXiv: https://arxiv.org/abs/2106.06041
 
 ## What does our work do?
 We propose a method that gives adversarial robustness to a neural network model against (stochastic) adversarial attacks by using an Energy-based Model (EBM) trained with Denoising Score Matching (DSM), which is called Adversarial denosing purification (ADP).
